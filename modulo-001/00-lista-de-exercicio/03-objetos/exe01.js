@@ -6,24 +6,27 @@ gasto em reais para realizar este percurso.
 
 */
 
-class carros {
+class Carro {
 
     marca;
     cor;
     gastoMedioCombustivel;
 
-    constructor(nome, idade){
+    constructor(marca,cor,gastoMedioCombustivel){
         this.marca = marca;
         this.cor = cor;
         this.gastoMedioCombustivel = gastoMedioCombustivel;
     }
+
+    calcularGastoDePercurso(distanciaEmKm, precoCombustivel){
+        return (distanciaEmKm * this.gastoMedioCombustivel) * precoCombustivel;
+    }
 }
 
-function gastoMedioDeCombustivel(km,preco,gasto){
 
-   return (km / gasto) * preco;
-}
 
-const fiate = new fiurino('fiate','preta',10);
+const uno = new Carro('fiat','preto',1/12);
+const palio = new Carro('fait', 'prata', 1/10)
 
-gastoMedioDeCombustivel(fiate);
+console.log(uno.calcularGastoDePercurso(70,5).toFixed(2));
+console.log(palio.calcularGastoDePercurso(70,5));
