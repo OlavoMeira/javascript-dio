@@ -8,4 +8,4 @@ for (let i = 1; i <= 10; i++) {
 }
 }
 
-tabuada(5);
+tabuada(7);
