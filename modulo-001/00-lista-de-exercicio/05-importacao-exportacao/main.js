@@ -16,10 +16,23 @@
                 2x10 = 20
  */
 
-/*  Importa,ão da primeira atividade arquivo exe01-auxiliar.js  funcionando coretamente   descomente para testar.
+/*  Importação da primeira atividade arquivo exe01-auxiliar.js  funcionando coretamente   descomente para testar.
+
 const { gets, print } = require('./exe01-auxiliar');
 
 print(2);
 
 */
 
+
+/*Importação da primeira atividade arquivo exe02-auxiliar.js  funcionando coretamente   descomente para testar.
+
+const {print} = require('./exe02-auxiliar');
+
+print();
+*/
+
+
+const {print} = require('./exe03-auxiliar');
+
+print();
