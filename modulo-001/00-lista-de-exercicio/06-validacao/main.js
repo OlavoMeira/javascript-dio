@@ -10,7 +10,7 @@ const listaNumero = [5,3,4,1,10,8];
 print(listaNumero);*/
 
 
-const {print} = require('./exe03-auxiliar');
+const {imprimirDados} = require('./exe03-auxiliar');
 
 
-console.log(print(4000,500));
+console.log(imprimirDados);

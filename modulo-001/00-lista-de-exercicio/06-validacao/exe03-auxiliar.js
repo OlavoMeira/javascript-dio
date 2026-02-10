@@ -20,55 +20,56 @@ Para calcular o percentual de imposto segue as aliquotas:
 
 
 
-class funcionario {
-
+class Funcionario { 
     nome;
     empresa;
     cargo;
-    
 
-
-    constructor (nome,empresa,cargo){
-
+    constructor(nome, empresa, cargo) {
         this.nome = nome;
         this.empresa = empresa;
         this.cargo = cargo;
-        
     }
 
-    calcularSalario(salario,bonus){
+    calcularSalario(salario, bonus) {
 
-        if(salario > 0 && salario  <= 1100){
+        let percentualImposto = 0;
 
-            return (salario - (salario * 0.05)) + bonus
+        if (salario >= 0 && salario <= 1100) {
 
-        }else if(salario > 1100 && salario <= 2500){
+            percentualImposto = 0.05;
 
-            return (salario - (salario * 0.1)) + bonus
+        } else if (salario > 1100 && salario <= 2500) {
 
-        }else{
+            percentualImposto = 0.10;
 
-            return (salario - (salario * 0.15)) + bonus
+        } else {
+
+            percentualImposto = 0.15;
         }
+
+        const valorImposto = salario * percentualImposto;
+        return (salario - valorImposto) + bonus;
     }
 }
 
 
-function print(salario,bonus){
-
-    const valor  = dev02.calcularSalario(salario, bonus);
-
-    console.log(`Funcionário: ${dev02.nome}`);
-    console.log(`Cargo: ${dev02.cargo}`);
-    console.log(`Empresa: ${dev02.empresa}`);
-    console.log(`Salário a transferir: R$ ${valor}`);
+const dev = new Funcionario('Olavo', 'Prefeitura Vitória da Conquista', 'Estagiário');
+const dev02 = new Funcionario('Gutierre', 'Prefeitura Vitória da Conquista', 'Técnico de Nível Superior');
 
 
+function imprimirDados(func, salario, bonus) {
+    const valorFinal = func.calcularSalario(salario, bonus);
 
+    console.log(`------------------------------`);
+    console.log(`Funcionário: ${func.nome}`);
+    console.log(`Cargo: ${func.cargo}`);
+    console.log(`Empresa: ${func.empresa}`);
+    console.log(`Salário a transferir: R$ ${valorFinal.toFixed(2)}`);
 }
-const dev = new funcionario('Olavo','prefeitura Vitoria da Conquista', 'Estagiário');
-const dev02 = new funcionario('Gutierre','prefeitura Vitoria da Conquista', 'tecnico de nivel superior em imformatica');
 
 
+imprimirDados(dev, 900, 100); 
+imprimirDados(dev02,3600, 533); 
 
-module.exports = {print};
+module.exports = { imprimirDados };
