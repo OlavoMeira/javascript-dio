@@ -3,8 +3,14 @@
 print(1);*/
 
 
-const {print} = require('./exe02-auxiliar');
+/*const {print} = require('./exe02-auxiliar');
 
 const listaNumero = [5,3,4,1,10,8];
 
-print(listaNumero);
+print(listaNumero);*/
+
+
+const {print} = require('./exe03-auxiliar');
+
+
+console.log(print(4000,500));
